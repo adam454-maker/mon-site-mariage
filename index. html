@@ -1,0 +1,1722 @@
+<!DOCTYPE html>
+<html lang="fr" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zawaj Halal - Rencontre Matrimoniale selon le Coran et la Sounnah</title>
+    <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #1e3a2e;
+            --primary-light: #2d5a45;
+            --gold: #d4af37;
+            --gold-light: #e8c547;
+            --cream: #faf8f3;
+            --white: #ffffff;
+            --text-dark: #1a1a1a;
+            --text-light: #666666;
+            --success: #22c55e;
+            --border: #e5e7eb;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--cream);
+            color: var(--text-dark);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        .arabic-font {
+            font-family: 'Amiri', serif;
+        }
+
+        /* Header */
+        header {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+            color: var(--white);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 5%;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            font-size: 1.5rem;
+            font-weight: 700;
+            text-decoration: none;
+            color: var(--white);
+        }
+
+        .logo-icon {
+            width: 40px;
+            height: 40px;
+            background: var(--gold);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2.5rem;
+            list-style: none;
+            align-items: center;
+        }
+
+        .nav-links a {
+            color: var(--white);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+            font-size: 0.95rem;
+        }
+
+        .nav-links a:hover {
+            color: var(--gold-light);
+        }
+
+        .nav-cta {
+            background: var(--gold);
+            color: var(--primary);
+            padding: 0.6rem 1.5rem;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: all 0.3s;
+            border: 2px solid var(--gold);
+        }
+
+        .nav-cta:hover {
+            background: transparent;
+            color: var(--gold);
+        }
+
+        .mobile-menu {
+            display: none;
+            flex-direction: column;
+            gap: 4px;
+            cursor: pointer;
+        }
+
+        .mobile-menu span {
+            width: 25px;
+            height: 3px;
+            background: var(--white);
+            transition: 0.3s;
+        }
+
+        /* Hero Section */
+        .hero {
+            margin-top: 80px;
+            background: linear-gradient(135deg, var(--primary) 0%, #0f281e 100%);
+            color: var(--white);
+            padding: 6rem 5%;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -10%;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(212,175,55,0.1) 0%, transparent 70%);
+            border-radius: 50%;
+        }
+
+        .hero-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-content h1 {
+            font-size: 3.5rem;
+            line-height: 1.2;
+            margin-bottom: 1.5rem;
+            font-weight: 700;
+        }
+
+        .hero-content h1 span {
+            color: var(--gold-light);
+            display: block;
+        }
+
+        .hero-subtitle {
+            font-size: 1.25rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+            line-height: 1.8;
+        }
+
+        .hero-stats {
+            display: flex;
+            gap: 3rem;
+            margin-bottom: 2.5rem;
+        }
+
+        .stat-item {
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--gold);
+            display: block;
+        }
+
+        .stat-label {
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+
+        .hero-cta {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .btn-primary {
+            background: var(--gold);
+            color: var(--primary);
+            padding: 1rem 2.5rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1.1rem;
+            transition: all 0.3s;
+            border: 2px solid var(--gold);
+            display: inline-block;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(212,175,55,0.3);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--white);
+            padding: 1rem 2.5rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            border: 2px solid rgba(255,255,255,0.3);
+            transition: all 0.3s;
+            display: inline-block;
+        }
+
+        .btn-secondary:hover {
+            border-color: var(--gold);
+            color: var(--gold);
+        }
+
+        .hero-image {
+            position: relative;
+        }
+
+        .hero-card {
+            background: rgba(255,255,255,0.05);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 20px;
+            padding: 2rem;
+            transform: rotate(3deg);
+            transition: transform 0.3s;
+        }
+
+        .hero-card:hover {
+            transform: rotate(0deg) scale(1.02);
+        }
+
+        .testimonial-bubble {
+            background: var(--white);
+            color: var(--text-dark);
+            padding: 1.5rem;
+            border-radius: 15px;
+            margin-bottom: 1rem;
+            position: relative;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        .testimonial-bubble::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 30px;
+            width: 0;
+            height: 0;
+            border-left: 10px solid transparent;
+            border-right: 10px solid transparent;
+            border-top: 10px solid var(--white);
+        }
+
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-left: 1rem;
+        }
+
+        .author-avatar {
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, var(--gold), var(--gold-light));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            color: var(--primary);
+        }
+
+        /* Features Section */
+        .features {
+            padding: 6rem 5%;
+            background: var(--white);
+        }
+
+        .section-header {
+            text-align: center;
+            max-width: 700px;
+            margin: 0 auto 4rem;
+        }
+
+        .section-tag {
+            color: var(--primary);
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+            display: block;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: 1rem;
+            line-height: 1.3;
+        }
+
+        .section-subtitle {
+            color: var(--text-light);
+            font-size: 1.1rem;
+        }
+
+        .features-grid {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .feature-card {
+            background: var(--cream);
+            padding: 2.5rem;
+            border-radius: 20px;
+            border: 1px solid var(--border);
+            transition: all 0.3s;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .feature-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, var(--gold), var(--gold-light));
+            transform: scaleX(0);
+            transition: transform 0.3s;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.08);
+        }
+
+        .feature-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .feature-icon {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, var(--primary), var(--primary-light));
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+            color: var(--gold);
+        }
+
+        .feature-title {
+            font-size: 1.3rem;
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+
+        .feature-text {
+            color: var(--text-light);
+            line-height: 1.8;
+        }
+
+        /* How It Works */
+        .process {
+            padding: 6rem 5%;
+            background: linear-gradient(to bottom, var(--cream), var(--white));
+        }
+
+        .process-grid {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 2rem;
+            position: relative;
+        }
+
+        .process-step {
+            text-align: center;
+            position: relative;
+        }
+
+        .step-number {
+            width: 80px;
+            height: 80px;
+            background: var(--white);
+            border: 3px solid var(--gold);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin: 0 auto 1.5rem;
+            position: relative;
+            z-index: 2;
+            box-shadow: 0 10px 30px rgba(212,175,55,0.2);
+        }
+
+        .step-content h3 {
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+            font-size: 1.2rem;
+        }
+
+        .step-content p {
+            color: var(--text-light);
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        .process-line {
+            position: absolute;
+            top: 40px;
+            left: 12.5%;
+            right: 12.5%;
+            height: 3px;
+            background: linear-gradient(90deg, var(--gold) 0%, var(--gold-light) 100%);
+            z-index: 1;
+        }
+
+        /* Values Section */
+        .values {
+            padding: 6rem 5%;
+            background: var(--primary);
+            color: var(--white);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .values::before {
+            content: '❋';
+            position: absolute;
+            top: 10%;
+            right: 5%;
+            font-size: 20rem;
+            opacity: 0.03;
+            color: var(--gold);
+        }
+
+        .values-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .values-content h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+            line-height: 1.3;
+        }
+
+        .values-content h2 span {
+            color: var(--gold-light);
+        }
+
+        .value-item {
+            display: flex;
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+            align-items: flex-start;
+        }
+
+        .value-check {
+            width: 30px;
+            height: 30px;
+            background: var(--gold);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--primary);
+            font-weight: 700;
+            flex-shrink: 0;
+            margin-top: 0.2rem;
+        }
+
+        .value-text h4 {
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .value-text p {
+            opacity: 0.8;
+            line-height: 1.6;
+        }
+
+        .values-image {
+            background: rgba(255,255,255,0.05);
+            border-radius: 20px;
+            padding: 3rem;
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .islamic-pattern {
+            width: 100%;
+            height: 300px;
+            background: repeating-linear-gradient(
+                45deg,
+                transparent,
+                transparent 10px,
+                rgba(212,175,55,0.1) 10px,
+                rgba(212,175,55,0.1) 20px
+            );
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 4rem;
+            color: var(--gold);
+        }
+
+        /* Testimonials */
+        .testimonials {
+            padding: 6rem 5%;
+            background: var(--white);
+        }
+
+        .testimonials-grid {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+        }
+
+        .testimonial-card {
+            background: var(--cream);
+            padding: 2rem;
+            border-radius: 20px;
+            border: 1px solid var(--border);
+            position: relative;
+            transition: transform 0.3s;
+        }
+
+        .testimonial-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.08);
+        }
+
+        .quote-icon {
+            font-size: 3rem;
+            color: var(--gold);
+            opacity: 0.3;
+            line-height: 1;
+            margin-bottom: -1rem;
+        }
+
+        .testimonial-text {
+            font-style: italic;
+            color: var(--text-dark);
+            margin-bottom: 1.5rem;
+            line-height: 1.8;
+            font-size: 1.05rem;
+        }
+
+        .testimonial-author-info {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .author-img {
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, var(--primary), var(--primary-light));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            font-weight: 600;
+        }
+
+        .author-details h4 {
+            color: var(--primary);
+            font-size: 1rem;
+        }
+
+        .author-details span {
+            color: var(--text-light);
+            font-size: 0.85rem;
+        }
+
+        /* FAQ Section */
+        .faq {
+            padding: 6rem 5%;
+            background: var(--cream);
+        }
+
+        .faq-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            background: var(--white);
+            margin-bottom: 1rem;
+            border-radius: 15px;
+            overflow: hidden;
+            border: 1px solid var(--border);
+            transition: all 0.3s;
+        }
+
+        .faq-item:hover {
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+
+        .faq-question {
+            padding: 1.5rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            cursor: pointer;
+            font-weight: 600;
+            color: var(--primary);
+            transition: background 0.3s;
+        }
+
+        .faq-question:hover {
+            background: rgba(212,175,55,0.05);
+        }
+
+        .faq-icon {
+            font-size: 1.5rem;
+            color: var(--gold);
+            transition: transform 0.3s;
+        }
+
+        .faq-item.active .faq-icon {
+            transform: rotate(45deg);
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
+            padding: 0 1.5rem;
+        }
+
+        .faq-item.active .faq-answer {
+            max-height: 500px;
+            padding-bottom: 1.5rem;
+        }
+
+        .faq-answer p {
+            color: var(--text-light);
+            line-height: 1.8;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            padding: 6rem 5%;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+            color: var(--white);
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-section::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -10%;
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(circle, rgba(212,175,55,0.15) 0%, transparent 70%);
+            border-radius: 50%;
+        }
+
+        .cta-content {
+            position: relative;
+            z-index: 1;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .cta-content h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .cta-content p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            margin-bottom: 2rem;
+        }
+
+        .cta-btn {
+            background: var(--gold);
+            color: var(--primary);
+            padding: 1.2rem 3rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1.2rem;
+            display: inline-block;
+            transition: all 0.3s;
+            border: 2px solid var(--gold);
+        }
+
+        .cta-btn:hover {
+            background: transparent;
+            color: var(--gold);
+            transform: scale(1.05);
+        }
+
+        /* Footer */
+        footer {
+            background: #0f1f19;
+            color: var(--white);
+            padding: 4rem 5% 2rem;
+        }
+
+        .footer-grid {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 3rem;
+            margin-bottom: 3rem;
+        }
+
+        .footer-brand h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: var(--gold);
+        }
+
+        .footer-brand p {
+            opacity: 0.7;
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .social-links a {
+            width: 40px;
+            height: 40px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            text-decoration: none;
+            transition: all 0.3s;
+        }
+
+        .social-links a:hover {
+            background: var(--gold);
+            color: var(--primary);
+            transform: translateY(-3px);
+        }
+
+        .footer-column h4 {
+            color: var(--gold);
+            margin-bottom: 1.5rem;
+            font-size: 1.1rem;
+        }
+
+        .footer-column ul {
+            list-style: none;
+        }
+
+        .footer-column li {
+            margin-bottom: 0.8rem;
+        }
+
+        .footer-column a {
+            color: rgba(255,255,255,0.7);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .footer-column a:hover {
+            color: var(--gold-light);
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255,255,255,0.1);
+            padding-top: 2rem;
+            text-align: center;
+            opacity: 0.6;
+            font-size: 0.9rem;
+        }
+
+        .arabic-text {
+            font-family: 'Amiri', serif;
+            font-size: 1.4rem;
+            margin-top: 0.5rem;
+            color: var(--gold);
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .animate {
+            animation: fadeInUp 0.8s ease-out;
+        }
+
+        /* Responsive */
+        @media (max-width: 1024px) {
+            .hero-container {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .hero-content h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero-stats {
+                justify-content: center;
+            }
+
+            .hero-cta {
+                justify-content: center;
+            }
+
+            .hero-image {
+                order: -1;
+            }
+
+            .values-container {
+                grid-template-columns: 1fr;
+            }
+
+            .process-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .process-line {
+                display: none;
+            }
+
+            .testimonials-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .mobile-menu {
+                display: flex;
+            }
+
+            .hero-content h1 {
+                font-size: 2rem;
+            }
+
+            .process-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .social-links {
+                justify-content: center;
+            }
+        }
+
+        /* Modal */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.8);
+            z-index: 2000;
+            align-items: center;
+            justify-content: center;
+            padding: 1rem;
+        }
+
+        .modal.active {
+            display: flex;
+        }
+
+        .modal-content {
+            background: var(--white);
+            border-radius: 20px;
+            max-width: 600px;
+            width: 100%;
+            max-height: 90vh;
+            overflow-y: auto;
+            position: relative;
+            animation: fadeInUp 0.3s;
+        }
+
+        .modal-header {
+            background: linear-gradient(135deg, var(--primary), var(--primary-light));
+            color: var(--white);
+            padding: 2rem;
+            border-radius: 20px 20px 0 0;
+            text-align: center;
+        }
+
+        .modal-header h2 {
+            margin-bottom: 0.5rem;
+        }
+
+        .modal-body {
+            padding: 2rem;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: var(--primary);
+            font-weight: 600;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 0.8rem 1rem;
+            border: 2px solid var(--border);
+            border-radius: 10px;
+            font-family: inherit;
+            transition: border-color 0.3s;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--gold);
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+        }
+
+        .checkbox-group {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .checkbox-group input {
+            width: auto;
+            margin-top: 0.3rem;
+        }
+
+        .checkbox-group label {
+            font-size: 0.9rem;
+            color: var(--text-light);
+            font-weight: 400;
+        }
+
+        .submit-btn {
+            width: 100%;
+            background: var(--gold);
+            color: var(--primary);
+            padding: 1rem;
+            border: none;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .submit-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(212,175,55,0.3);
+        }
+
+        .close-modal {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            background: rgba(255,255,255,0.2);
+            border: none;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            color: var(--white);
+            font-size: 1.5rem;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        .close-modal:hover {
+            background: rgba(255,255,255,0.3);
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <nav>
+            <a href="#" class="logo">
+                <div class="logo-icon">❋</div>
+                <span>Zawaj Halal</span>
+            </a>
+            <ul class="nav-links">
+                <li><a href="#accueil">Accueil</a></li>
+                <li><a href="#fonctionnement">Fonctionnement</a></li>
+                <li><a href="#valeurs">Nos Valeurs</a></li>
+                <li><a href="#temoignages">Témoignages</a></li>
+                <li><a href="#faq">FAQ</a></li>
+                <li><a href="#" class="nav-cta" onclick="openModal()">S'inscrire</a></li>
+            </ul>
+            <div class="mobile-menu" onclick="toggleMobileMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="accueil">
+        <div class="hero-container">
+            <div class="hero-content animate">
+                <h1>Le Mariage <span>selon le Coran et la Sounnah</span></h1>
+                <p class="hero-subtitle">
+                    La première plateforme de rencontre 100% halal pour musulmans francophones. 
+                    Trouvez votre âme sœur dans un cadre sécurisé, modéré et conforme aux enseignements islamiques.
+                </p>
+                
+                <div class="hero-stats">
+                    <div class="stat-item">
+                        <span class="stat-number">2,000+</span>
+                        <span class="stat-label">Célibataires</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">620+</span>
+                        <span class="stat-label">Mariages</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">100%</span>
+                        <span class="stat-label">Halal</span>
+                    </div>
+                </div>
+
+                <div class="hero-cta">
+                    <a href="#" class="btn-primary" onclick="openModal()">Commencer mon inscription</a>
+                    <a href="#fonctionnement" class="btn-secondary">En savoir plus</a>
+                </div>
+            </div>
+
+            <div class="hero-image animate">
+                <div class="hero-card">
+                    <div class="testimonial-bubble">
+                        <p class="arabic-font" style="font-size: 1.1rem; margin-bottom: 0.5rem;">
+                            "Alhamdulilah, j'ai trouvé mon épouse grâce à cette plateforme. Que Allah récompense l'équipe !"
+                        </p>
+                        <p style="font-size: 0.9rem; color: var(--text-light);">
+                            Après 3 mois d'échange modéré, nous nous sommes mariés selon les règles de la Sounnah.
+                        </p>
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">A</div>
+                        <div>
+                            <div style="font-weight: 600;">Ahmed</div>
+                            <div style="font-size: 0.85rem; opacity: 0.8;">Marié depuis 2024</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features">
+        <div class="section-header">
+            <span class="section-tag">Nos Engagements</span>
+            <h2 class="section-title">Pourquoi choisir Zawaj Halal ?</h2>
+            <p class="section-subtitle">
+                Une approche unique du mariage islamique, fondée sur la sécurité, 
+                la bienveillance et le respect des préceptes religieux.
+            </p>
+        </div>
+
+        <div class="features-grid">
+            <div class="feature-card">
+                <div class="feature-icon">🛡️</div>
+                <h3 class="feature-title">Modération 24/7</h3>
+                <p class="feature-text">
+                    Une équipe de frères et sœurs dévoués analyse chaque message 
+                    pour garantir des échanges conformes au Coran et à la Sounnah. 
+                    Aucune conversation n'est laissée sans surveillance.
+                </p>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-icon">👥</div>
+                <h3 class="feature-title">Présence du Mahram</h3>
+                <p class="feature-text">
+                    Pour chaque rencontre (mouqabala), un tuteur légitime est requis. 
+                    Les sœurs partagent le contact de leur mahram avant toute rencontre 
+                    physique ou virtuelle.
+                </p>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-icon">🔒</div>
+                <h3 class="feature-title">Confidentialité Totale</h3>
+                <p class="feature-text">
+                    Vos données sont strictement protégées. Aucune photo échangée, 
+                    aucune information personnelle divulguée. La vérification se fait 
+                    via des profils anonymisés et sécurisés.
+                </p>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-icon">📚</div>
+                <h3 class="feature-title">Conseils de Savants</h3>
+                <p class="feature-text">
+                    Accédez à des conseils authentiques tirés du Coran et de la Sounnah, 
+                    validés par des étudiants en sciences islamiques pour préparer 
+                    votre mariage dans les meilleures conditions.
+                </p>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-icon">⚡</div>
+                <h3 class="feature-title">Sérieux & Efficacité</h3>
+                <p class="feature-text">
+                    Limitation à 35 messages par jour, pas de discussions futiles. 
+                    Chaque échange doit faire avancer concrètement votre projet 
+                    de mariage. Focus sur l'essentiel.
+                </p>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-icon">🌟</div>
+                <h3 class="feature-title">Communauté Sounnah</h3>
+                <p class="feature-text">
+                    Rejoignez des musulmans suivant le Coran et la Sounnah selon 
+                    la compréhension des pieux prédécesseurs. Un espace sans sectarisme, 
+                    fondé sur l'authenticité.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works -->
+    <section class="process" id="fonctionnement">
+        <div class="section-header">
+            <span class="section-tag">Comment ça marche</span>
+            <h2 class="section-title">Votre chemin vers le Halal</h2>
+            <p class="section-subtitle">
+                Un processus simple, sécurisé et éprouvé pour rencontrer votre futur époux/épouse.
+            </p>
+        </div>
+
+        <div class="process-grid">
+            <div class="process-line"></div>
+            
+            <div class="process-step">
+                <div class="step-number">1</div>
+                <div class="step-content">
+                    <h3>Inscription</h3>
+                    <p>Remplissez le formulaire détaillé et signez le contrat de confiance attestant de votre sérieux et votre engagement religieux.</p>
+                </div>
+            </div>
+
+            <div class="process-step">
+                <div class="step-number">2</div>
+                <div class="step-content">
+                    <h3>Vérification</h3>
+                    <p>Notre équipe étudie votre dossier pour vérifier l'adéquation avec nos valeurs islamiques et valide votre profil sous 48h.</p>
+                </div>
+            </div>
+
+            <div class="process-step">
+                <div class="step-number">3</div>
+                <div class="step-content">
+                    <h3>Rencontres</h3>
+                    <p>Accédez aux profils vérifiés, échangez via notre interface modérée (9h-00h) avec limite de 35 messages/jour.</p>
+                </div>
+            </div>
+
+            <div class="process-step">
+                <div class="step-number">4</div>
+                <div class="step-content">
+                    <h3>Mouqabala</h3>
+                    <p>Organisez une rencontre supervisée par votre mahram. Une fois le contact établi, nous vous accompagnons vers le mariage civil et religieux.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Values Section -->
+    <section class="values" id="valeurs">
+        <div class="values-container">
+            <div class="values-content">
+                <h2>Nos engagements pour un mariage <span>béni par Allah</span></h2>
+                
+                <div class="value-item">
+                    <div class="value-check">✓</div>
+                    <div class="value-text">
+                        <h4>Respect strict de la Sounnah</h4>
+                        <p>Nous suivons le Coran et la Sounnah selon la compréhension des Salaf Salih. 
+                        Pas de mixité, pas de photos, pas de relations hors mariage.</p>
+                    </div>
+                </div>
+
+                <div class="value-item">
+                    <div class="value-check">✓</div>
+                    <div class="value-text">
+                        <h4>Soutien bienveillant</h4>
+                        <p>Une équipe disponible pour vous conseiller, vous orienter et vous encourager 
+                        dans votre démarche matrimoniale avec douceur et sagesse.</p>
+                    </div>
+                </div>
+
+                <div class="value-item">
+                    <div class="value-check">✓</div>
+                    <div class="value-text">
+                        <h4>Sécurité renforcée</h4>
+                        <p>Profils vérifiés, messages modérés, identités protégées. 
+                        Nous mettons tout en œuvre pour préserver votre honneur et votre sécurité.</p>
+                    </div>
+                </div>
+
+                <div class="value-item">
+                    <div class="value-check">✓</div>
+                    <div class="value-text">
+                        <h4>Accompagnement continu</h4>
+                        <p>Des ressources pédagogiques, des conseils de savants et un suivi personnalisé 
+                        jusqu'à la célébration de votre union.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="values-image">
+                <div class="islamic-pattern">
+                    <div style="text-align: center;">
+                        <div style="font-size: 3rem; margin-bottom: 1rem;">🕋</div>
+                        <p class="arabic-font" style="font-size: 1.5rem; color: var(--white);">
+                            "Parmi Ses signes, Il a créé pour vous des épouses"
+                        </p>
+                        <p style="font-size: 0.9rem; margin-top: 1rem; opacity: 0.8;">
+                            Sourate Ar-Rum, verset 21
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="testimonials" id="temoignages">
+        <div class="section-header">
+            <span class="section-tag">Témoignages</span>
+            <h2 class="section-title">Ils se sont mariés grâce à nous</h2>
+            <p class="section-subtitle">
+                Des histories vraies de frères et sœurs qui ont trouvé l'amour dans le halal.
+            </p>
+        </div>
+
+        <div class="testimonials-grid">
+            <div class="testimonial-card">
+                <div class="quote-icon">"</div>
+                <p class="testimonial-text">
+                    "Le célibat était très pesant pour moi. Grâce à Zawaj Halal et après avoir suivi les conseils de l'équipe, 
+                    j'ai fait une nuit de prière et supplié Allah. Il a mis mon mari sur mon chemin !"
+                </p>
+                <div class="testimonial-author-info">
+                    <div class="author-img">S</div>
+                    <div class="author-details">
+                        <h4>Sœur A.</h4>
+                        <span>Mariée en 2024</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="testimonial-card">
+                <div class="quote-icon">"</div>
+                <p class="testimonial-text">
+                    "J'ai trouvé une épouse au-delà de mes espérances subhanAllah. La plateforme facilite énormément les choses 
+                    quand on est exigeant sur la religion. Qu'Allah bénisse ce projet !"
+                </p>
+                <div class="testimonial-author-info">
+                    <div class="author-img">F</div>
+                    <div class="author-details">
+                        <h4>Frère M.</h4>
+                        <span>Marié en 2023</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="testimonial-card">
+                <div class="quote-icon">"</div>
+                <p class="testimonial-text">
+                    "En tant que convertie sans famille musulmane, j'avais peur de ne pas trouver de tuteur. 
+                    L'équipe m'a accompagnée avec patience et bienveillance. Alhamdulilah, je suis mariée maintenant !"
+                </p>
+                <div class="testimonial-author-info">
+                    <div class="author-img">L</div>
+                    <div class="author-details">
+                        <h4>Sœur L.</h4>
+                        <span>Mariée en 2024</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq" id="faq">
+        <div class="section-header">
+            <span class="section-tag">Questions fréquentes</span>
+            <h2 class="section-title">Vos interrogations, nos réponses</h2>
+        </div>
+
+        <div class="faq-container">
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFaq(this)">
+                    <span>Qui peut s'inscrire sur Zawaj Halal ?</span>
+                    <span class="faq-icon">+</span>
+                </div>
+                <div class="faq-answer">
+                    <p>
+                        Tout musulman(e) pratiquant(e) ou débutant(e) souhaitant se marier selon le Coran et la Sounnah. 
+                        Nous acceptons les personnes sans mauvaises croyances (sectes) et qui souhaitent apprendre l'Islam authentique. 
+                        La prière est un critère obligatoire. Les sœurs non voilées souhaitant évoluer sont également les bienvenues.
+                    </p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFaq(this)">
+                    <span>Comment se déroulent les échanges ?</span>
+                    <span class="faq-icon">+</span>
+                </div>
+                <div class="faq-answer">
+                    <p>
+                        Les discussions ont lieu sur une interface dédiée ouverte de 9h à 00h, limitée à 35 messages par jour. 
+                        Chaque message est lu et validé par nos modérateurs avant transmission. 
+                        Interdiction de drague, compliments déplacés, ou divulgation d'informations personnelles.
+                    </p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFaq(this)">
+                    <span>Puis-je voir des photos des profils ?</span>
+                    <span class="faq-icon">+</span>
+                </div>
+                <div class="faq-answer">
+                    <p>
+                        Non, l'échange de photos est interdit sur notre plateforme conformément aux avis de nombreux savants. 
+                        La seule façon de voir une personne est d'organiser une mouqabala (rencontre) 
+                        supervisée par un mahram, soit en présentiel, soit en visioconférence.
+                    </p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFaq(this)">
+                    <span>Que se passe-t-il après la rencontre ?</span>
+                    <span class="faq-icon">+</span>
+                </div>
+                <div class="faq-answer">
+                    <p>
+                        Une fois les contacts du mahram échangés, notre rôle d'intermédiaire s'arrête. 
+                        Il relève de votre responsabilité et de celle de votre famille de mener une enquête 
+                        approfondie sur le prétendant. Nous déclinons toute responsabilité concernant 
+                        le choix du mahram ou la suite des démarches.
+                    </p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFaq(this)">
+                    <span>Y a-t-il une garantie de mariage ?</span>
+                    <span class="faq-icon">+</span>
+                </div>
+                <div class="faq-answer">
+                    <p>
+                        Non, nous ne pouvons garantir que vous trouverez un conjoint. Le mariage est un bienfait 
+                        accordé uniquement par Allah سبحانه وتعالى. Notre cotisation couvre les frais de gestion 
+                        et de modération. Aucun remboursement n'est effectué en cas d'absence de mariage.
+                    </p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFaq(this)">
+                    <span>Quelle est votre Aqida (croyance) ?</span>
+                    <span class="faq-icon">+</span>
+                </div>
+                <div class="faq-answer">
+                    <p>
+                        Nous croyons en Allah et Son Messager Muhammad ﷺ, suivant le Coran et la Sounnah 
+                        selon la compréhension des pieux prédécesseurs (Salaf Salih). Nous nous désavouons 
+                        de toutes sectes (Ikhwani, Khawarij, Soufis, Tijanis, etc.) et suivons les savants 
+                        de la Sounnah contemporains et anciens.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="cta-content">
+            <h2>Prêt à rencontrer votre âme sœur ?</h2>
+            <p>
+                Ne laissez pas le temps passer. Chaque jour sans mariage légitime est une opportunité 
+                de chasteté perdue. Prenez votre destin en main, confiez-vous à Allah et faites le premier pas.
+            </p>
+            <a href="#" class="cta-btn" onclick="openModal()">S'inscrire maintenant</a>
+            <p class="arabic-text" style="margin-top: 2rem; font-size: 1.2rem;">
+                "Quiconque craint Allah, Il lui donne une issue favorable"
+            </p>
+            <p style="font-size: 0.9rem; opacity: 0.8;">Sourate At-Talaq, verset 2</p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-grid">
+            <div class="footer-brand">
+                <h3>Zawaj Halal</h3>
+                <p>
+                    La première plateforme matrimoniale 100% halal pour musulmans francophones. 
+                    Un service d'intermédiaire fondé sur le Coran et la Sounnah pour vous aider 
+                    à trouver l'amour dans la légitimité.
+                </p>
+                <div class="social-links">
+                    <a href="#">📧</a>
+                    <a href="#">📘</a>
+                    <a href="#">📸</a>
+                    <a href="#">▶️</a>
+                </div>
+            </div>
+
+            <div class="footer-column">
+                <h4>Navigation</h4>
+                <ul>
+                    <li><a href="#accueil">Accueil</a></li>
+                    <li><a href="#fonctionnement">Fonctionnement</a></li>
+                    <li><a href="#valeurs">Nos Valeurs</a></li>
+                    <li><a href="#temoignages">Témoignages</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-column">
+                <h4>Ressources</h4>
+                <ul>
+                    <li><a href="#">Guide du mariage</a></li>
+                    <li><a href="#">Conseils de savants</a></li>
+                    <li><a href="#">E-book gratuit</a></li>
+                    <li><a href="#">Blog</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-column">
+                <h4>Contact</h4>
+                <ul>
+                    <li><a href="mailto:contact@zawajhalal.com">contact@zawajhalal.com</a></li>
+                    <li><a href="#">Formulaire de contact</a></li>
+                    <li><a href="#">Télégram</a></li>
+                    <li><a href="#">WhatsApp</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; 2024 Zawaj Halal. Tous droits réservés. | Conçu avec ❤️ pour la Oummah</p>
+            <p class="arabic-font" style="margin-top: 0.5rem; font-size: 1.1rem;">
+                بارك الله فيكم
+            </p>
+        </div>
+    </footer>
+
+    <!-- Modal d'inscription -->
+    <div class="modal" id="inscriptionModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button class="close-modal" onclick="closeModal()">&times;</button>
+                <h2>Débuter votre inscription</h2>
+                <p>Étape 1 : Informations de base</p>
+            </div>
+            <div class="modal-body">
+                <form onsubmit="handleSubmit(event)">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>Prénom</label>
+                            <input type="text" required placeholder="Votre prénom">
+                        </div>
+                        <div class="form-group">
+                            <label>Nom</label>
+                            <input type="text" required placeholder="Votre nom">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Email</label>
+                        <input type="email" required placeholder="votre@email.com">
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>Genre</label>
+                            <select required>
+                                <option value="">Sélectionnez</option>
+                                <option value="homme">Frère</option>
+                                <option value="femme">Sœur</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label>Âge</label>
+                            <input type="number" min="18" max="70" required placeholder="25">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Pays de résidence</label>
+                        <select required>
+                            <option value="">Sélectionnez votre pays</option>
+                            <option value="fr">France</option>
+                            <option value="be">Belgique</option>
+                            <option value="ch">Suisse</option>
+                            <option value="ca">Canada</option>
+                            <option value="other">Autre</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Niveau de pratique</label>
+                        <select required>
+                            <option value="">Sélectionnez</option>
+                            <option value="debutant">Débutant(e) - J'apprends</option>
+                            <option value="pratiquant">Pratiquant(e) - Je progresse</option>
+                            <option value="savant">Étudiant(e) en sciences islamiques</option>
+                        </select>
+                    </div>
+
+                    <div class="checkbox-group">
+                        <input type="checkbox" id="priere" required>
+                        <label for="priere">
+                            Je certifie pratiquer la prière quotidienne (5 prières obligatoires)
+                        </label>
+                    </div>
+
+                    <div class="checkbox-group">
+                        <input type="checkbox" id="aqida" required>
+                        <label for="aqida">
+                            Je suis musulman(e) sans mauvaises innovations (pas de secte) et je souhaite suivre le Coran et la Sounnah authentique
+                        </label>
+                    </div>
+
+                    <div class="checkbox-group">
+                        <input type="checkbox" id="serieux" required>
+                        <label for="serieux">
+                            Je m'engage à utiliser cette plateforme dans un but matrimonial sérieux uniquement, sans badinage
+                        </label>
+                    </div>
+
+                    <button type="submit" class="submit-btn">
+                        Continuer l'inscription →
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Modal functions
+        function openModal() {
+            document.getElementById('inscriptionModal').classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeModal() {
+            document.getElementById('inscriptionModal').classList.remove('active');
+            document.body.style.overflow = 'auto';
+        }
+
+        function handleSubmit(e) {
+            e.preventDefault();
+            alert('Merci pour votre inscription ! Notre équipe va étudier votre dossier et vous contacter sous 48h inshaAllah. BarakAllahu fik.');
+            closeModal();
+        }
+
+        // FAQ toggle
+        function toggleFaq(element) {
+            const item = element.parentElement;
+            const isActive = item.classList.contains('active');
+            
+            // Close all
+            document.querySelectorAll('.faq-item').forEach(faq => {
+                faq.classList.remove('active');
+            });
+
+            // Open clicked if wasn't active
+            if (!isActive) {
+                item.classList.add('active');
+            }
+        }
+
+        // Mobile menu toggle
+        function toggleMobileMenu() {
+            const navLinks = document.querySelector('.nav-links');
+            navLinks.style.display = navLinks.style.display === 'flex' ? 'none' : 'flex';
+        }
+
+        // Smooth scroll
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Close modal on outside click
+        window.onclick = function(event) {
+            const modal = document.getElementById('inscriptionModal');
+            if (event.target === modal) {
+                closeModal();
+            }
+        }
+
+        // Animation on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: "0px 0px -50px 0px"
+        };
+
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animate');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.feature-card, .process-step, .testimonial-card').forEach((el) => {
+            observer.observe(el);
+        });
+    </script>
+</body>
+</html>
